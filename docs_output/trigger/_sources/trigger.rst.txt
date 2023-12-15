@@ -1,0 +1,18 @@
+trigger package
+===============
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   trigger.trigger
+
+Module contents
+---------------
+
+.. automodule:: trigger
+   :members:
+   :undoc-members:
+   :show-inheritance:

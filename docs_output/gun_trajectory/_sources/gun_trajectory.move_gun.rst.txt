@@ -1,0 +1,7 @@
+gun\_trajectory.move\_gun module
+================================
+
+.. automodule:: gun_trajectory.move_gun
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,15 @@
+Welcome to the documentation for audio_input
+============================================
+
+.. toctree::
+   :maxdepth: 2
+
+   audio_input <modules>
+
+
+Indices and Search
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+

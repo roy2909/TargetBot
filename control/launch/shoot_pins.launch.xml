@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find-pkg-share franka_moveit_config)/launch/rviz.launch.py">
+        <arg name="rviz_config" value="$(find-pkg-share control)/rviz.config.rviz" />
+        <arg name="robot_ip" value="panda0.robot"/>
+    </include> 
+    <!-- <include file="$(find-pkg-share realsense2_camera)/launch/rs_launch.py"> -->
+      <!-- <arg name="depth_module.profile" value="1280x720x30"/>
+      <arg name="pointcloud.enable" value="true"/>
+      <arg name="align_depth.enable" value="true"/>
+    </include>  -->
+    
+    <node pkg="control" exec="control" />
+
+    <node pkg="gun_trajectory" exec="shoot"/>
+
+    <node pkg="image_yolo" exec="yolo"/>
+
+    <node pkg="audio_input" exec="user_input"/>
+
+    <node pkg="trigger" exec="trigger"/>
+
+    <node pkg="apriltag_ros" exec="apriltag_node" output="log">
+        <param from="$(find-pkg-share control)/tags.yaml"/>
+        <remap from="camera_info" to="camera/color/camera_info"/>
+        <remap from="image_rect" to="camera/color/image_raw"/>
+    </node>
+
+
+</launch> 
+
+<!-- <?xml version="1.0"?>
+<launch>
+    
+    <node pkg="control" exec="control" />
+    <node pkg="gun_trajectory" exec="shoot"/>
+
+    <node pkg="image_yolo" exec="yolo"/>
+
+    <node pkg="apriltag_ros" exec="apriltag_node" output="log">
+        <param from="$(find-pkg-share control)/tags.yaml"/>
+        <remap from=    "camera_info" to="camera/color/camera_info"/>
+        <remap from="image_rect" to="camera/color/image_raw"/>
+    </node>
+
+
+
+</launch> -->

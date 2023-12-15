@@ -1,0 +1,7 @@
+trigger.trigger module
+======================
+
+.. automodule:: trigger.trigger
+   :members:
+   :undoc-members:
+   :show-inheritance:

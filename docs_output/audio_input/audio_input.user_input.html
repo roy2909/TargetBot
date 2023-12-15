@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>audio_input.user_input module &mdash; audio_input 0.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="audio_input package" href="audio_input.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            audio_input
+          </a>
+              <div class="version">
+                0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">audio_input</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="audio_input.html">audio_input package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="audio_input.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">audio_input.user_input module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#services">Services</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#returns">Returns</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="audio_input.html#module-audio_input">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">audio_input</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">audio_input</a></li>
+          <li class="breadcrumb-item"><a href="audio_input.html">audio_input package</a></li>
+      <li class="breadcrumb-item active">audio_input.user_input module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/audio_input.user_input.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-audio_input.user_input">
+<span id="audio-input-user-input-module"></span><h1>audio_input.user_input module<a class="headerlink" href="#module-audio_input.user_input" title="Permalink to this headline"></a></h1>
+<p>UsersInput node that could help with audio user input.</p>
+<section id="services">
+<h2>Services<a class="headerlink" href="#services" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>input [UsersInput]: user input.</p>
+</div></blockquote>
+</section>
+<section id="returns">
+<h2>Returns<a class="headerlink" href="#returns" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+<dl class="py class">
+<dt class="sig sig-object py" id="audio_input.user_input.UsersInput">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">audio_input.user_input.</span></span><span class="sig-name descname"><span class="pre">UsersInput</span></span><a class="headerlink" href="#audio_input.user_input.UsersInput" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">rclpy.node.Node</span></code></p>
+<p>A UserInput node that could help with audio user input.</p>
+<blockquote>
+<div><p>Node (ros node): a node’s superclass</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="audio_input.user_input.UsersInput.user_input_callback">
+<span class="sig-name descname"><span class="pre">user_input_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#audio_input.user_input.UsersInput.user_input_callback" title="Permalink to this definition"></a></dt>
+<dd><p>Process user input.</p>
+<blockquote>
+<div><p>request (UserInput): UserInput message representing the user’s request.
+response (UserInput.Response): An instance of the UserInput response message.</p>
+</div></blockquote>
+<blockquote>
+<div><p>UserInput.Response: The processed user input stored in the response message.</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="audio_input.user_input.entry_point">
+<span class="sig-prename descclassname"><span class="pre">audio_input.user_input.</span></span><span class="sig-name descname"><span class="pre">entry_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#audio_input.user_input.entry_point" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="audio_input.user_input.recognize_speech_from_mic">
+<span class="sig-prename descclassname"><span class="pre">audio_input.user_input.</span></span><span class="sig-name descname"><span class="pre">recognize_speech_from_mic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">recognizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">microphone</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#audio_input.user_input.recognize_speech_from_mic" title="Permalink to this definition"></a></dt>
+<dd><p>Recognize speech from a microphone.</p>
+<blockquote>
+<div><p>recognizer (SpeechRecognizer): An instance of the speech recognition Recognizer class.
+microphone (Microphone): An instance of the speech recognition Microphone class.</p>
+</div></blockquote>
+<blockquote>
+<div><p>TypeError: If <cite>recognizer</cite> is not an instance of Recogniclearzer.
+TypeError: If <cite>microphone</cite> is not an instance of Microphone.</p>
+</div></blockquote>
+<blockquote>
+<div><dl class="simple">
+<dt>dict: A dictionary containing recognition results.</dt><dd><ul class="simple">
+<li><p>‘success’ (bool): True if recognition was successful, False otherwise.</p></li>
+<li><p>‘error’ (str): An error message if an error occurred during recognition.</p></li>
+<li><p>‘transcription’ (str): The recognized speech transcription</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="audio_input.html" class="btn btn-neutral float-left" title="audio_input package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TODO: License declaration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

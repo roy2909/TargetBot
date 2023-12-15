@@ -1,0 +1,18 @@
+audio\_input package
+====================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   audio_input.user_input
+
+Module contents
+---------------
+
+.. automodule:: audio_input
+   :members:
+   :undoc-members:
+   :show-inheritance:

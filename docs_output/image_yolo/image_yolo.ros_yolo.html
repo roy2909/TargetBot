@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>image_yolo.ros_yolo module &mdash; image_yolo 0.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="image_yolo package" href="image_yolo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            image_yolo
+          </a>
+              <div class="version">
+                0.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">image_yolo</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="image_yolo.html">image_yolo package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="image_yolo.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">image_yolo.ros_yolo module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="image_yolo.html#module-image_yolo">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">image_yolo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">image_yolo</a></li>
+          <li class="breadcrumb-item"><a href="image_yolo.html">image_yolo package</a></li>
+      <li class="breadcrumb-item active">image_yolo.ros_yolo module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/image_yolo.ros_yolo.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-image_yolo.ros_yolo">
+<span id="image-yolo-ros-yolo-module"></span><h1>image_yolo.ros_yolo module<a class="headerlink" href="#module-image_yolo.ros_yolo" title="Permalink to this headline"></a></h1>
+<p>Offers a service to detect pins and publish them as markers.</p>
+<dl class="simple">
+<dt>PUBLISHERS:</dt><dd><p>visualization_marker_array (MarkerArray/visualization_msgs.msg) - publishes marker arrays</p>
+</dd>
+<dt>SERVICES:</dt><dd><p>coordinates (Empty/std_srvs.srv) - detect pins</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="image_yolo.ros_yolo.Camera_subscriber">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">image_yolo.ros_yolo.</span></span><span class="sig-name descname"><span class="pre">Camera_subscriber</span></span><a class="headerlink" href="#image_yolo.ros_yolo.Camera_subscriber" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">rclpy.node.Node</span></code></p>
+<p>Camera subscriber node that achieves cv recognition.</p>
+<blockquote>
+<div><p>Node (rclpy.node.Node): Super class of the writer node.</p>
+</div></blockquote>
+<blockquote>
+<div><p>bridge (CvBridge): OpenCV bridge for converting image messages.
+_depth_image_topic (str): Topic for depth images.
+_depth_info_topic (str): Topic for depth camera information.
+sub_depth (Subscription): Subscription for depth images.
+sub_info (Subscription): Subscription for depth camera information.
+sub1 (Subscription): Subscription for color images.
+intrinsics (None or CameraInfo): Camera intrinsic parameters.
+pix (None or ndarray): Pixel coordinates of detected pins.
+pix_grade (None or ndarray): Pixel coordinates of detected pins after grading.
+model (YOLO): YOLO model for detecting pins.
+centroid (Service): Service for obtaining detected pin coordinates.
+_latest_depth_img (None or Image): Latest depth image.
+_latest_color_img (None or Image): Latest color image.
+point_r (PointStamped): Detected red pin coordinates.
+point_y (PointStamped): Detected yellow pin coordinates.
+point_g (PointStamped): Detected green pin coordinates.
+point_b (PointStamped): Detected blue pin coordinates.
+marker_array (MarkerArray): Marker array for rviz visualization.
+red_count (int): Count of detected red pins.
+blue_count (int): Count of detected blue pins.
+green_count (int): Count of detected green pins.
+yellow_count (int): Count of detected yellow pins.
+pub2 (Publisher): Publisher for visualization marker array.</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="image_yolo.ros_yolo.Camera_subscriber.create_marker">
+<span class="sig-name descname"><span class="pre">create_marker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#image_yolo.ros_yolo.Camera_subscriber.create_marker" title="Permalink to this definition"></a></dt>
+<dd><p>Create a visualization marker based on coordinates.</p>
+<blockquote>
+<div><p>x (float): X-coordinate in meters.
+y (float): Y-coordinate in meters.
+z (float): Z-coordinate in meters.
+count (int): Marker ID.
+ns (str): Marker namespace.</p>
+</div></blockquote>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="image_yolo.ros_yolo.Camera_subscriber.depth_world">
+<span class="sig-name descname"><span class="pre">depth_world</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#image_yolo.ros_yolo.Camera_subscriber.depth_world" title="Permalink to this definition"></a></dt>
+<dd><p>Convert pixel coordinates to real-world coordinates using depth information.</p>
+<blockquote>
+<div><p>x (int): X-coordinate.
+y (int): Y-coordinate.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Tuple[float, float, float]: Real-world coordinates (x, y, z).</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="image_yolo.ros_yolo.Camera_subscriber.detect_pins">
+<span class="sig-name descname"><span class="pre">detect_pins</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#image_yolo.ros_yolo.Camera_subscriber.detect_pins" title="Permalink to this definition"></a></dt>
+<dd><p>Detect pins in the camera feed using a YOLO model.</p>
+<blockquote>
+<div><p>request: Service request.
+response: Service response.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Service response.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="image_yolo.ros_yolo.Camera_subscriber.get_latest_frame">
+<span class="sig-name descname"><span class="pre">get_latest_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#image_yolo.ros_yolo.Camera_subscriber.get_latest_frame" title="Permalink to this definition"></a></dt>
+<dd><p>Call for the latest color image.</p>
+<blockquote>
+<div><p>data (Image): Color image message.</p>
+</div></blockquote>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="image_yolo.ros_yolo.Camera_subscriber.imageDepthCallback">
+<span class="sig-name descname"><span class="pre">imageDepthCallback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#image_yolo.ros_yolo.Camera_subscriber.imageDepthCallback" title="Permalink to this definition"></a></dt>
+<dd><p>Obtain latest depth image.</p>
+<blockquote>
+<div><p>data (Image): Depth image message.</p>
+</div></blockquote>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="image_yolo.ros_yolo.Camera_subscriber.imageDepthInfoCallback">
+<span class="sig-name descname"><span class="pre">imageDepthInfoCallback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cameraInfo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#image_yolo.ros_yolo.Camera_subscriber.imageDepthInfoCallback" title="Permalink to this definition"></a></dt>
+<dd><p>Obtain depth camera information.</p>
+<blockquote>
+<div><p>cameraInfo (CameraInfo): Camera information message.</p>
+</div></blockquote>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="image_yolo.ros_yolo.main">
+<span class="sig-prename descclassname"><span class="pre">image_yolo.ros_yolo.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#image_yolo.ros_yolo.main" title="Permalink to this definition"></a></dt>
+<dd><p>Run the Camera_subscriber node.</p>
+<blockquote>
+<div><p>args: Command-line arguments.</p>
+</div></blockquote>
+<blockquote>
+<div><p>None</p>
+</div></blockquote>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="image_yolo.html" class="btn btn-neutral float-left" title="image_yolo package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TODO: License declaration.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

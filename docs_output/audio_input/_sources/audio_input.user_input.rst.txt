@@ -1,0 +1,7 @@
+audio\_input.user\_input module
+===============================
+
+.. automodule:: audio_input.user_input
+   :members:
+   :undoc-members:
+   :show-inheritance:

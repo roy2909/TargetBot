@@ -1,0 +1,7 @@
+gun\_trajectory.moveit\_api module
+==================================
+
+.. automodule:: gun_trajectory.moveit_api
+   :members:
+   :undoc-members:
+   :show-inheritance:

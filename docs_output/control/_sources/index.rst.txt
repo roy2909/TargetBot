@@ -1,0 +1,15 @@
+Welcome to the documentation for control
+========================================
+
+.. toctree::
+   :maxdepth: 2
+
+   control <modules>
+
+
+Indices and Search
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+

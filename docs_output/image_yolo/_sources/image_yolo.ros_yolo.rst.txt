@@ -1,0 +1,7 @@
+image\_yolo.ros\_yolo module
+============================
+
+.. automodule:: image_yolo.ros_yolo
+   :members:
+   :undoc-members:
+   :show-inheritance:

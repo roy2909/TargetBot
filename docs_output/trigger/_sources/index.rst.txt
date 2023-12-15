@@ -1,0 +1,15 @@
+Welcome to the documentation for trigger
+========================================
+
+.. toctree::
+   :maxdepth: 2
+
+   trigger <modules>
+
+
+Indices and Search
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+

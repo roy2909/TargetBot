@@ -1,0 +1,7 @@
+gun\_trajectory.quaternion module
+=================================
+
+.. automodule:: gun_trajectory.quaternion
+   :members:
+   :undoc-members:
+   :show-inheritance:

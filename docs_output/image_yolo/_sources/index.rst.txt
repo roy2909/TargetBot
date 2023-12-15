@@ -1,0 +1,15 @@
+Welcome to the documentation for image_yolo
+===========================================
+
+.. toctree::
+   :maxdepth: 2
+
+   image_yolo <modules>
+
+
+Indices and Search
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+

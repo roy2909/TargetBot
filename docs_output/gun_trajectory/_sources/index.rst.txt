@@ -1,0 +1,15 @@
+Welcome to the documentation for gun_trajectory
+===============================================
+
+.. toctree::
+   :maxdepth: 2
+
+   gun_trajectory <modules>
+
+
+Indices and Search
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+

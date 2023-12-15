@@ -1,0 +1,7 @@
+control.control module
+======================
+
+.. automodule:: control.control
+   :members:
+   :undoc-members:
+   :show-inheritance:

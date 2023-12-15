@@ -1,0 +1,20 @@
+gun\_trajectory package
+=======================
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   gun_trajectory.move_gun
+   gun_trajectory.moveit_api
+   gun_trajectory.quaternion
+
+Module contents
+---------------
+
+.. automodule:: gun_trajectory
+   :members:
+   :undoc-members:
+   :show-inheritance:
